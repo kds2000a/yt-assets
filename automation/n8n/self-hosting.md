@@ -192,11 +192,6 @@ ingress:
 cloudflared tunnel route dns n8n-tunnel n8n.yourdomain.com
 ```
 
-**터널 실행:**
-```bash
-cloudflared tunnel run n8n-tunnel
-```
-
 #### 3. Docker 컨테이너 설정 및 실행
 
 ```bash
@@ -219,6 +214,11 @@ docker run -d `
   -v C:\path\to\your\n8n-data:/home/node/.n8n `
   -e WEBHOOK_URL=https://n8n.yourdomain.com `
   n8nio/n8n:latest
+```
+
+**n8n 실행 후 터널 실행:**
+```bash
+cloudflared tunnel run n8n-tunnel
 ```
 
 **참고:** 컴퓨터를 재시작하면 Docker는 자동으로 실행되도록 설정할 수 있지만, 터널은 수동으로 다시 실행해야 합니다:
