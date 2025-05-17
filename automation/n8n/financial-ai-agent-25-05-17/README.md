@@ -1,4 +1,3 @@
-
 # n8n으로 금융 애널리스트 AI 에이전트 구축하기
 
 이 가이드는 n8n을 활용하여 재무제표를 분석하고 주가 추이와 추가 리서치를 자동으로 진행해주는 '금융 애널리스트 AI 에이전트'를 구축하는 방법을 설명합니다.
@@ -120,12 +119,13 @@
 
    📐 출력은 다음 구조를 따릅니다 (반드시 Markdown):
 
-   json
+   ```json
    {
      "ticker": "META",
      "subject": "메타(META) 2025년 5월 투자 분석",
      "text": "[Markdown 형식의 보고서]"
    }
+   ```
 
    📄 Markdown 작성 규칙:
 
@@ -176,8 +176,8 @@
    - Body:
    ```json
    {
-     "query": "{{ $fromAI("query","search term") }}",
-     "topic": "{{ $fromAI("topic","The category of search. The value should be either 'general' or 'news'") }}",
+     "query": "{{ $fromAI('query','search term') }}",
+     "topic": "{{ $fromAI('topic','The category of search. The value should be either general or news') }}",
      "search_depth": "advanced",
      "chunks_per_source": 3,
      "max_results": 1,
@@ -203,7 +203,7 @@
    - Body:
    ```json
    {
-    "urls": "{{$fromAI("url","https://finance.yahoo.com/quote/{ticker}/history/")}}",
+    "urls": "{{$fromAI('url','https://finance.yahoo.com/quote/{ticker}/history/')}}",
      "include_images": false,
      "extract_depth": "basic"
    }
@@ -220,7 +220,7 @@
    - Body:
    ```json
    {
-    "urls": "{{$fromAI("url","https://finance.yahoo.com/quote/{ticker}/financials/")}}",
+    "urls": "{{$fromAI('url','https://finance.yahoo.com/quote/{ticker}/financials/')}}",
      "include_images": false,
      "extract_depth": "basic"
    }
@@ -237,7 +237,7 @@
    - Body:
    ```json
    {
-    "urls": "{{$fromAI("url","https://finance.yahoo.com/quote/{ticker}/balance-sheet/")}}",
+    "urls": "{{$fromAI('url','https://finance.yahoo.com/quote/{ticker}/balance-sheet/')}}",
      "include_images": false,
      "extract_depth": "basic"
    }
@@ -254,7 +254,7 @@
    - Body:
    ```json
    {
-    "urls": "{{$fromAI("url","https://finance.yahoo.com/quote/{ticker}/cash-flow/")}}",
+    "urls": "{{$fromAI('url','https://finance.yahoo.com/quote/{ticker}/cash-flow/')}}",
      "include_images": false,
      "extract_depth": "basic"
    }
