@@ -68,7 +68,7 @@ docker run --rm \
 docker run --rm `
   --name n8n-docker `
   -p 5678:5678 `
-  -v /c/path/to/your/n8n-data:/home/node/.n8n `
+  -v /E:/Docker_Data/n8n-data:/home/node/.n8n `
   n8nio/n8n:latest
 ```
 
@@ -131,7 +131,7 @@ docker run --rm \
 docker run --rm `
   --name n8n-docker `
   -p 5678:5678 `
-  -v /c/path/to/your/n8n-data:/home/node/.n8n `
+  -v /E:/Docker_Data/n8n-data:/home/node/.n8n `
   -e WEBHOOK_URL=<임시_URL> `
   n8nio/n8n:latest
 ```
